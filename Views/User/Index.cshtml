@@ -1,0 +1,33 @@
+﻿@model LoginDemo.Models.UserLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <table>
+        <tr>
+            <td>Anvandarnamn</td>
+            @* Below the m retrieves UserName from the model UserLogin *@
+            @* It does this because we declared this model at the top *@
+            <td>@Html.EditorFor(m => m.UserName)</td>
+        </tr>
+        <tr>
+            <td>Losenord</td>
+            <td>@Html.EditorFor(m => m.Password)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Logga in" /></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>
